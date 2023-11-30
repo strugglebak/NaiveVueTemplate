@@ -1,27 +1,11 @@
 // 1. 导入
+import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import type { User } from '@/api/type';
 
 // 2. 使用
-const userStore = defineStore<string>('userStore', {
-	state: () => ({
-		username: ''
-	}),
-	getters: {
-		// @ts-ignore
-		getUserName: (state: User) => {
-			return state.username;
-		}
-	},
-	actions: {},
-	// 所有数据持久化
-	// persist: {
-	//     enabled: true,
-	// },
-
-	// 持久化存储插件其他配置
-	// @ts-ignore
-	persist: {
+const userStore = defineStore('userStore', () => {
+	const persist = {
 		enabled: true,
 		strategies: [
 			// 修改存储中使用的键名称，默认为当前 Store的 id
@@ -30,7 +14,28 @@ const userStore = defineStore<string>('userStore', {
 			{ key: 'storekey', storage: sessionStorage, paths: ['routes', 'userInfo'] }, // routes 和 userInfo 字段用 sessionStorage 存储
 			{ key: 'storekey', storage: localStorage, paths: ['token'] } // token字段用 localStorage 存储
 		]
-	}
+	};
+
+	const state = ref<User>({
+		id: 0,
+		username: '',
+		email: '',
+		phone: '',
+		avatar: '',
+		introduction: '',
+		roles: [],
+		permissions: [],
+		createTime: '',
+		updateTime: '',
+		lastLoginTime: '',
+		status: 0
+	});
+
+	const getUserName = (state: User) => {
+		return state.username;
+	};
+
+	return { state, getUserName, persist };
 });
 // 3. 导出
 export default userStore;
