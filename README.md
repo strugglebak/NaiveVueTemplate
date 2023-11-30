@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite + Naive UI + pinia
+# Vue 3 + TypeScript + Vite + Naive UI + pinia + tailwindcss
 
 > [掘金原文章](https://juejin.cn/post/7304241660601614386)
 
@@ -13,8 +13,10 @@ Vite + Vue3 + TS 项目规范化开发模板
 - commitlint
 - sass
 - axios
+- router
 - jsx
 - pinia
+- tailwindcss
 
 # 依赖安装
 
