@@ -1,7 +1,10 @@
 import axios from 'axios';
 import Nprogress from 'nprogress';
 import 'nprogress/nprogress.css'; // 导入样式，否则看不到效果
-import { ElMessage } from 'element-plus';
+import { useMessage } from 'naive-ui';
+
+const message = useMessage();
+
 //创建axios实例
 let request = axios.create({
 	baseURL: import.meta.env.VITE_APP_BASE_API,
@@ -46,10 +49,7 @@ request.interceptors.response.use(
 			default:
 				msg = '无网络';
 		}
-		ElMessage({
-			type: 'error',
-			message: msg
-		});
+		message.error(msg);
 		return Promise.reject(error);
 	}
 );
