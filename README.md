@@ -13,6 +13,7 @@ Vite + Vue3 + TS 项目规范化开发模板
 - commitlint
 - sass
 - axios
+- jsx
 
 # 依赖安装
 
