@@ -10,7 +10,7 @@ import '@/styles/index.scss';
 import 'virtual:svg-icons-register';
 
 /** 引入tailwindcss */
-import './tailwind.css';
+import '@/styles/tailwind.css';
 
 const app = createApp(App);
 const pinia = createPinia();
