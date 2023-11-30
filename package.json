@@ -19,9 +19,8 @@
 		"build:pro": "vue-tsc && vite build --mode production"
 	},
 	"dependencies": {
-		"@element-plus/icons-vue": "^2.1.0",
 		"axios": "^1.6.2",
-		"element-plus": "^2.4.2",
+		"naive-ui": "^2.35.0",
 		"nprogress": "^0.2.0",
 		"vue": "^3.3.4",
 		"vue-router": "^4.2.5"

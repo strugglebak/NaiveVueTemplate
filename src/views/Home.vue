@@ -1,6 +1,9 @@
+<script lang="ts" setup>
+import { NButton } from 'naive-ui';
+</script>
 <template>
-	<div>首页</div>
+	<div>
+		<NButton>按钮</NButton>
+	</div>
 </template>
-
-<script lang="ts" setup></script>
 <style lang="scss" scoped></style>

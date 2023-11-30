@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import { NMessageProvider, NConfigProvider, zhCN, NDialogProvider } from 'naive-ui';
+</script>
 <template>
-	<router-view></router-view>
+	<NConfigProvider :locale="zhCN">
+		<NDialogProvider>
+			<NMessageProvider>
+				<RouterView />
+			</NMessageProvider>
+		</NDialogProvider>
+	</NConfigProvider>
 </template>
-
-<script setup lang="ts"></script>
-
 <style lang="scss" scoped></style>
