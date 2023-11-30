@@ -13,6 +13,10 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 /** 引入 jsx */
 import vueJsx from '@vitejs/plugin-vue-jsx';
 
+/** 引入 tailwindcss */
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
@@ -37,6 +41,9 @@ export default defineConfig({
 	},
 	css: {
 		preprocessorOptions: {
+			postcss: {
+				plugins: [tailwindcss, autoprefixer]
+			},
 			scss: {
 				javascriptEnabled: true,
 				additionalData: '@import "./src/styles/variable.scss";'
