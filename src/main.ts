@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import router from './router';
 
 /** 引入全局样式文件 */
 import '@/styles/index.scss';
@@ -13,6 +14,8 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import 'virtual:svg-icons-register';
 
 const app = createApp(App);
+
+app.use(router);
 
 /** 安装element-plus插件 */
 app.use(ElementPlus, {
