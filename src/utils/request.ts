@@ -1,9 +1,9 @@
 import axios from 'axios';
 import Nprogress from 'nprogress';
 import 'nprogress/nprogress.css'; // 导入样式，否则看不到效果
-import { useMessage } from 'naive-ui';
+import { createDiscreteApi } from 'naive-ui';
 
-const message = useMessage();
+const { message } = createDiscreteApi(['message']);
 
 //创建axios实例
 let request = axios.create({
